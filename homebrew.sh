@@ -27,6 +27,7 @@ brew install -v git-base mercurial
 echo "INSTALLING GOODNESS..."
 brew install -v \
     curl \
+    ddrescue \
     dvtm \
     flac \
     git-extras \
