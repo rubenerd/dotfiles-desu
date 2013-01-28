@@ -37,6 +37,7 @@ brew install -v \
     macvim \
     mc \
     mcrypt \
+    mkvtoolnix \
     ncftp \
     perl \
     pngcrush \
