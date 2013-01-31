@@ -31,6 +31,7 @@ brew install -v \
     dvtm \
     flac \
     git-extras \
+    gpg \
     imagemagick \
     lame \
     links \
@@ -44,6 +45,7 @@ brew install -v \
     qemu \
     rsync \
     ruby \
+    s3cmd \
     vim \
     xz
 
