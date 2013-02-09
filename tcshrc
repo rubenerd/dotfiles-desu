@@ -1,0 +1,110 @@
+#!/usr/bin/env tcsh
+
+##
+## .tcshrc for TENEX C Shell
+## By Ruben Schade, 2004-present
+## MIT licenced
+##
+## I got used to tcsh from FreeBSD and early builds of Mac OS X. I've
+## since moved to zsh, but keep this around just in case.
+##
+
+echo Hello Ruben! ^_^
+
+## PATHS
+## I use RVM for Ruby, Homebrew, FreeBSD ports and yum in default 
+## locations, and pkgsrc in ~/.local. Phew.
+set path = (. ~/.rvm/bin ~/.local/bin /usr/local/{sbin,bin} $path)
+setenv MANPATH /usr/local/share/man:/usr/share/man
+
+## CHECK IF WE'RE IN A PROMPT
+if ($?prompt) then
+
+    ## SIMPLE PROMPT
+    ## No colour, I set this in my Terminal preferences
+    set prompt = "\n%B%? %T %n@%m %l:%h %b%~\nready %% "
+
+    ## SPECIAL SHELL VARIABLES
+    set autoexpand        # auto invokes expand-history before completions
+    set autolist          # list possibilities for ambiguous completion
+    set color             # colour display for ls-F and GNU ls
+    set colorcat          # colour escape sequences and NLS messages
+    set complete enhance  # ignore case, consider .-_ as word separators 
+    set nobeep            # disable beep beep beep beep
+    set noclobber         # restrict >> to preserve exisitng files
+    #set noding           # why disable the most delightul tcsh feature!?
+    set padhour           # always 2 digit hours (I grew up in Singapore)
+    set pushdtohome       # pushd without arguments acts like cd ~
+    set pushdsilent       # pushd/popd don't print directory stacks
+    set rmstar            # warn me before doing something stupid
+    unset savehist        # don't save command history, security reasons
+    umask 022             # nice permissions
+
+endif
+
+## ENVIRONMENT VARIABLES
+setenv BLOCKSIZE M
+setenv BROWSER   'links'
+setenv CLICOLOR  1
+setenv EDITOR    'vim'
+setenv PAGER     'less'
+setenv VISUAL    'less'
+
+## SHELL ALIASES
+## I value verbosity, compression over time+memory
+alias cd    'pushd'
+alias cls   'clear'
+alias cp    'cp -iv'
+alias f     'finger'
+alias help  'apropos'
+alias la    'ls -aFG'
+alias ll    'ls -aFlGhO'
+alias ls    'ls -FG'
+alias md    'mkdir -v'
+alias mv    'mv -iv'
+alias pop   'popd'
+alias p     'ps -af'
+alias rd    'rmdir -v'
+alias x     'echo Goodbye! && exit'
+
+## APPLICATION ALIASES
+alias perl   'perl -wT'
+alias ruby   'ruby -w'
+alias rsync  'rsync -aXvh'
+alias rsyncs 'rsync -aXvhS'
+alias vi     'vim'
+alias xz     'xz -zf9evv'
+
+## PKGSRC
+set CVS_RSH = ssh
+set CVSROOT = anoncvs@anoncvs.jp.NetBSD.org:/cvsroot
+
+## PLATFORM SPECIFIC ####################################################
+## I miss tcsh's switch syntax. SO much nicer than the Bourne stuff.
+switch(`uname`)
+    case "FreeBSD":
+    case "NetBSD":
+        alias pkg_add  'pkg install' # legacy of using ports/packages!
+        alias pkg_info 'pkg info' 
+        alias top      'top -s1'
+        breaksw
+    case "Darwin":
+        alias bi   'brew install -verbose'
+        alias bl   'brew list'
+        alias bll  'brew list -verbose'
+        alias br   'brew remove -verbose'
+        alias bs   'brew search -verbose'
+        alias bu   'brew update -verbose'
+        alias port 'brew'            # will break, serves just a reminder
+        breaksw
+    case "Linux":
+        alias ls 'ls --color=force'
+        alias la 'ls -aF --color=force'
+        alias ll 'ls -aFlO --color=force'
+        alias yi 'yum install'
+        alias yr 'yum remove'
+        alias ys 'yum search'
+        alias yu 'yum update'
+endsw
+
+## EOF ##
