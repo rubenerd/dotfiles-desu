@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 
 ##
 ## .zshrc for Z Shell
@@ -113,13 +113,14 @@ alias xz='xz -zf9evv'
 ## PLATFORM SPECIFIC ####################################################
 
 ## MAC OS X
-case `uname` in 'Darwin')
+case 'Darwin' in $(uname))
     alias bi='brew install --verbose'
     alias bl='brew list'
     alias bp='brew upgrade --verbose'
     alias bs='brew search'
     alias bu='brew update --verbose'
     export EDITOR=mate
+    echo hello
     ;;
 
 ## FREEBSD, NETBSD
