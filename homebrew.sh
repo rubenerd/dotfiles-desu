@@ -32,7 +32,7 @@ brew install -v \
     flac \
     git-extras \
     gpg \
-    imagemagick \
+    imagemagick --with-librsvg --with-libtiff --with-libwmf \
     lame \
     links \
     macvim \
