@@ -1,6 +1,6 @@
 # Readme for dotfiles-desu
 By Ruben Schade, 2012-present  
-https://github.com/rubenerd/dotfiles-desu
+https://github.com/RubenSchade/dotfiles-desu
 
 ## What is this?
 After years of SVN and hg, I've finally decided to put Github to use.
@@ -19,3 +19,7 @@ retired. That was a lot of acronyms, FYI. This includes:
 * VM initialisation scripts for VirtualBox, QEMU and such
 * one off Perl scripts
 * probably more
+
+## Wouldn't these work better as gists?
+Yes.
+
