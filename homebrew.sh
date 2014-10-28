@@ -13,7 +13,7 @@
 ##
 
 echo "INSTALLING HOMEBREW..."
-ruby -e "`curl -fsSkL raw.github.com/mxcl/homebrew/go`"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "TAPPING HOMEBREW/DUPES (AVOID OLD VERSIONS SHIPPED WITH OS X)..."
 brew tap -v homebrew/dupes
