@@ -1,0 +1,31 @@
+""
+"" Settings for nvi, the vi clone shipped with the BSDs
+"" Created:  2010-03-13
+"" Modified: 2014-10-28
+""
+"" Disable access to external programs
+set secure
+""
+"" Case-insensitive searches
+set ignorecase
+set iclower
+"" 
+"" regexp like egrep, case-insenstive
+set extended
+set iclower
+""
+"" 4 space auto indentation
+set autoindent
+set shiftwidth=4
+set tabstop=4
+""
+"" Verbose messages, but no blinding error visuals
+set noerrorbells
+set noflash
+set verbose
+""
+"" Show line numbers, column/row positions
+set number
+set ruler
+""
+"" EOF
