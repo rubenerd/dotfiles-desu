@@ -1,62 +1,84 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 ##
-## homebrew.sh for Homebrew package manager on OS X
+## homebrew.sh for Homebrew and Homebrew Cask on OS X
+## <http://github.com/Homebrew/homebrew>
+## <http://github.com/caskroom/homebrew-cask>
+##
 ## By Ruben Schade, 2012-present
-## MIT licenced
-##
-## I used pkgsrc and MacPorts for the longest time on OS X, but giving
-## Homebrew a try as my primary package manager on my MacBook Air. I
-## appreciate their effort not to duplicate software bundled with OS X,
-## but generally this software is outdated, so I install homebrew/dupes
-## first. Also, The Bird is The Word.
 ##
 
-echo "INSTALLING HOMEBREW..."
+echo "Installing and updating homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+beew install git
 
-echo "TAPPING HOMEBREW/DUPES (AVOID OLD VERSIONS SHIPPED WITH OS X)..."
-brew tap -v homebrew/dupes
+echo "Installing general brews..."
+brew install colordiff
+brew install curl
+brew install dcfldd
+brew install ddrescue
+brew install dvtm
+brew install flac
+brew install fortune
+brew install gpg
+brew install imagemagick --with-librsvg --with-libtiff --with-lib-wmf --without-magick-plus-plus
+brew install lame
+brew install libav
+brew install lftp
+brew install mcrypt
+brew install mkvtoolnix
+brew install nasm
+brew install nvi
+brew install openssl
+brew install perl
+brew install pngcrush
+brew install postgres  ## stable bottled version
+brew install quicksilver
+brew install ruby
+brew install rzip
+brew install speedtest_cli
+brew install subversion
+brew install tcsh
+brew install watch
+brew install xz
+brew install youtube-dl
 
-echo "UPDATING..."
-brew update -v
+echo "Installing homebrew/dupes..."
+brew tap homebrew/dupes
+brew install rsync
+brew install screen
 
-echo "INSTALLING DEPENDENCIES..."
-brew install -v git-base mercurial
+echo "Installing homebrew casks..."
+ln -s /Applications ~/Applications
+brew install caskroom/cask/brew-cask
+brew cask install adium
+brew cask install calibre
+brew cask install firefox
+brew cask install gimp-lisanet
+brew cask install grandperspective
+brew cask install ichm
+brew cask instakk inkscape
+brew cask install istat-menus
+brew cask install libreoffice
+brew cask install macvim
+brew cask install mpv
+brew cask install scummvm
+brew cask install textexpander
+brew cask install textmate
+brew cask install thunderbird
 
-echo "INSTALLING GOODNESS..."
-brew install -v \
-    curl \
-    ddrescue \
-    dvtm \
-    flac \
-    git-extras \
-    gpg \
-    imagemagick --with-librsvg --with-libtiff --with-libwmf \
-    lame \
-    links \
-    macvim \
-    mc \
-    mcrypt \
-    mkvtoolnix \
-    ncftp \
-    perl \
-    pngcrush \
-    qemu \
-    rsync \
-    ruby \
-    s3cmd \
-    vim \
-    xz
+echo "Install work virtualisation stuff..."
+brew install puppet
+brew install qemu
+brew cask install dosbox
+brew cask install packer
+brew cask install parallels
+brew cask install virtualbox
+brew cask install vmware-fusion
 
-echo "TAPPING MPV-PLAYER AND INSTALLING..."
-brew tap mpv-player/mpv
-brew install --HEAD mpv
-
-echo "CLEANING UP..."
-brew cleanup -v
-
-echo "LISTING INSTALLED GOODNESS..."
+echo "Listing installed goodness, and we're done..."
 brew list
 
-echo "ALL DONE. THE BIRD IS THE WORD."
+## EOF
+
