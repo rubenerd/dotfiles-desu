@@ -31,11 +31,7 @@ brew install mkvtoolnix
 brew install nasm
 brew install nvi
 brew install openssl
-brew install perl
 brew install pngcrush
-brew install postgres  ## stable bottled version
-brew install quicksilver
-brew install ruby
 brew install rzip
 brew install speedtest_cli
 brew install subversion
@@ -43,6 +39,13 @@ brew install tcsh
 brew install watch
 brew install xz
 brew install youtube-dl
+
+echo "Installing dev brews..."
+brew install nasm
+brew install perl
+brew install postgres
+brew install python
+brew install ruby
 
 echo "Installing homebrew/dupes..."
 brew tap homebrew/dupes
@@ -63,6 +66,7 @@ brew cask install istat-menus
 brew cask install libreoffice
 brew cask install macvim
 brew cask install mpv
+brew cask install quicksilver
 brew cask install scummvm
 brew cask install textexpander
 brew cask install textmate
