@@ -71,8 +71,8 @@ brew cask install thunderbird
 echo "Install work virtualisation stuff..."
 brew install puppet
 brew install qemu
+brew install homebrew/binary/packer
 brew cask install dosbox
-brew cask install packer
 brew cask install parallels
 brew cask install virtualbox
 brew cask install vmware-fusion
