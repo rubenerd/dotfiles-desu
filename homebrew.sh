@@ -69,6 +69,7 @@ brew cask install textmate
 brew cask install thunderbird
 
 echo "Install work virtualisation stuff..."
+brew install ansible
 brew install puppet
 brew install qemu
 brew install homebrew/binary/packer
