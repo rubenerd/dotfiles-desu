@@ -19,33 +19,40 @@ brew install curl
 brew install dcfldd
 brew install ddrescue
 brew install dvtm
-brew install flac
 brew install fortune
 brew install gpg
+brew install htop-osx
+brew install lftp
+brew install mc
+brew install mcrypt
+brew install nvi
+brew install openssl
+brew install rzip
+brew install speedtest_cli
+brew install tcsh
+brew install watch
+brew install xz
+
+echo "Installing dev brews..."
+brew install nasm
+brew install nginx
+brew install perl
+brew install postgres
+brew install python
+brew install ruby
+brew install subversion
+
+echo "Install multimedia brews (remember that term?)..."
+brew install flac
 brew install imagemagick --with-librsvg --with-libtiff --with-lib-wmf --without-magick-plus-plus
 brew install lame
 brew install libav
 brew install lftp
 brew install mcrypt
 brew install mkvtoolnix
-brew install nasm
-brew install nvi
-brew install openssl
 brew install pngcrush
-brew install rzip
-brew install speedtest_cli
-brew install subversion
-brew install tcsh
 brew install watch
-brew install xz
 brew install youtube-dl
-
-echo "Installing dev brews..."
-brew install nasm
-brew install perl
-brew install postgres
-brew install python
-brew install ruby
 
 echo "Installing homebrew/dupes..."
 brew tap homebrew/dupes
@@ -61,16 +68,19 @@ brew cask install firefox
 brew cask install gimp-lisanet
 brew cask install grandperspective
 brew cask install ichm
-brew cask instakk inkscape
+brew cask install inkscape
 brew cask install istat-menus
 brew cask install libreoffice
 brew cask install macvim
 brew cask install mpv
+brew cask install omnifocus
 brew cask install quicksilver
 brew cask install scummvm
 brew cask install textexpander
-brew cask install textmate
 brew cask install thunderbird
+brew cask install the-unarchiver
+brew cask install tunnelblick    ## needs to be manually moved to /Applications
+brew cask install xquartz        ## needs further user actions
 
 echo "Install work virtualisation stuff..."
 brew install ansible
