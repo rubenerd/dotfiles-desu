@@ -1,12 +1,12 @@
 #!/usr/bin/env tcsh
 
-##
+######
 ## .tcshrc for TENEX C Shell
 ## By Ruben Schade, 2004-present
 ## MIT licenced
 ##
 ## I got used to tcsh from FreeBSD and early builds of Mac OS X. I've
-## since moved to zsh, but keep this around just in case.
+## since regrettably moved to bash, because work.
 ##
 
 echo Hello Ruben! ^_^
