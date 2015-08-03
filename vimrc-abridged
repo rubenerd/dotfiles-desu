@@ -1,0 +1,15 @@
+""
+"" Ruben's abridged .vimrc
+""
+
+execute pathogen#infect()
+syntax on
+set ruler
+set number
+
+if has("gui_running") 
+    set background=dark
+    set guioptions-=T
+    set guioptions+=e
+    colorscheme solarized
+endif
