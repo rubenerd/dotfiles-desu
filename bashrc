@@ -49,6 +49,7 @@ alias df='df -hm'
 alias du='du -shm'
 alias word="printf '%s\n' 'Everybody knows that the Bird is the Word!'"
 
+## Other shortcuts
 alias ctorrent='screen ctorrent -D 200 -U 50 -p 51413 -C 128'
 alias h='history'
 alias f='finger'
@@ -61,6 +62,15 @@ alias unzip='unzip -x'
 alias vi='nvi'
 alias xz='xz -9vv'
 alias yt='youtube-dl'
+
+## Git shortcuts and typos
+alias gut='git'
+alias ga='git add --verbose'
+alias gc='git commit --verbose -m'
+alias gl='git pull --verbose'
+alias gp='git push --verbose'
+alias gpm='git push --verbose origin master'
+alias gs='git status'
 
 ## Silent pushd/popd
 function cd() {
