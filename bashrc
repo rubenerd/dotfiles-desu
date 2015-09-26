@@ -11,7 +11,7 @@
 export PS1='\n\[\e[1m\]\u@\h \w\n\$\[\e[0m\] '
 
 ## Basic path, more defined in system path
-export PATH=~/.local/bin:/opt/bin:/usr/local/bin:$PATH
+export PATH=~/.local/bin:/opt/perl5/bin:/opt/bin:/usr/local/bin:$PATH
 
 ## Environment variables
 export BLOCKSIZE=1m
@@ -71,6 +71,10 @@ alias gl='git pull --verbose'
 alias gp='git push --verbose'
 alias gpm='git push --verbose origin master'
 alias gs='git status'
+
+## Perlbrew Perl directory
+export PERLBREW_ROOT=/opt/perl5
+source /opt/perl5/etc/bashrc
 
 ## Silent pushd/popd
 function cd() {
