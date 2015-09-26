@@ -1,6 +1,6 @@
 #!/bin/sh
 
-##
+######
 ## homebrew.sh for Homebrew and Homebrew Cask on OS X
 ## <http://github.com/Homebrew/homebrew>
 ## <http://github.com/caskroom/homebrew-cask>
@@ -8,91 +8,87 @@
 ## By Ruben Schade, 2012-present
 ##
 
-echo "Installing and updating homebrew..."
+set -e
+
+## Install and update homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew update
-beew install git
+brew -v update
+brew install -v git
 
-echo "Installing general brews..."
-brew install colordiff
-brew install curl
-brew install dcfldd
-brew install ddrescue
-brew install dvtm
-brew install fortune
-brew install gpg
-brew install htop-osx
-brew install lftp
-brew install mc
-brew install mcrypt
-brew install nvi
-brew install openssl
-brew install rzip
-brew install speedtest_cli
-brew install tcsh
-brew install watch
-brew install xz
+## Tap homebrew repos
+brew tap -v homebrew/binary
+brew tap -v homebrew/dupes
+brew tap -v homebrew/fonts
 
-echo "Installing dev brews..."
-brew install nasm
-brew install nginx
-brew install perl
-brew install postgres
-brew install python
-brew install ruby
-brew install subversion
+## Install brews
+brew install -v ansible
+brew install -v aria2
+brew install -v colordiff
+brew install -v curl
+brew install -v dcfldd
+brew install -v ddrescue
+brew install -v dvtm
+brew install -v ffmpeg
+brew install -v flac
+brew install -v fortune
+brew install -v gpg
+brew install -v hugo
+brew install -v imagemagick --with-librsvg --with-libtiff --with-lib-wmf --without-magick-plus-plus
+brew install -v imagemagick
+brew install -v htop-osx
+brew install -v lame
+brew install -v mkvtoolnix
+brew install -v normalize
+brew install -v openssh
+brew install -v openssl
+brew install -v p7zip
+brew install -v packer
+brew install -v pngcrush
+brew install -v puppet
+brew install -v qemu
+brew install -v rsync
+brew install -v rzip
+brew install -v screen
+brew install -v speedtest_cli
+brew install -v testdisk
+brew install -v vault
+brew install -v watch
+brew install -v xz
+brew install -v youtube-dl
 
-echo "Install multimedia brews (remember that term?)..."
-brew install flac
-brew install imagemagick --with-librsvg --with-libtiff --with-lib-wmf --without-magick-plus-plus
-brew install lame
-brew install libav
-brew install lftp
-brew install mcrypt
-brew install mkvtoolnix
-brew install pngcrush
-brew install watch
-brew install youtube-dl
-
-echo "Installing homebrew/dupes..."
-brew tap homebrew/dupes
-brew install rsync
-brew install screen
-
-echo "Installing homebrew casks..."
-ln -s /Applications ~/Applications
+## Install homebrew-cask
 brew install caskroom/cask/brew-cask
-brew cask install adium
-brew cask install calibre
-brew cask install firefox
-brew cask install gimp-lisanet
-brew cask install grandperspective
-brew cask install ichm
-brew cask install inkscape
-brew cask install istat-menus
-brew cask install libreoffice
-brew cask install macvim
-brew cask install mpv
-brew cask install omnifocus
-brew cask install quicksilver
-brew cask install scummvm
-brew cask install textexpander
-brew cask install thunderbird
-brew cask install the-unarchiver
-brew cask install tunnelblick    ## needs to be manually moved to /Applications
-brew cask install xquartz        ## needs further user actions
+ln -s /Applications ~/Applications
 
-echo "Install work virtualisation stuff..."
-brew install ansible
-brew install puppet
-brew install qemu
-brew install homebrew/binary/packer
-brew cask install dosbox
-brew cask install parallels
-brew cask install virtualbox
-brew cask install vmware-fusion
+## Install casks
+brew cask install --verbose adium
+brew cask install --verbose atext
+brew cask install --verbose audio-hijack
+brew cask install --verbose boom
+brew cask install --verbose calibre
+brew cask install --verbose dosbox
+brew cask install --verbose dropbox
+brew cask install --verbose firefox
+brew cask install --verbose gimp-lisanet
+brew cask install --verbose grandperspective
+brew cask install --verbose inkscape
+brew cask install --verbose libreoffice
+brew cask install --verbose macvim
+brew cask install --verbose mpv
+brew cask install --verbose nvalt
+brew cask install --verbose omnifocus
+brew cask install --verbose 1password
+brew cask install --verbose parallels
+brew cask install --verbose quicktime-player7
+brew cask install --verbose scummvm
+brew cask install --verbose tigervnc-viewer
+brew cask install --verbose thunderbird
+brew cask install --verbose vagrant
+brew cask install --verbose virtualbox
+brew cask install --verbose viscocity
+brew cask install --verbose xquartz
 
-echo "Listing installed goodness, and we're done..."
+## List installed casks, and we're done!
 brew list
 
 ## EOF
