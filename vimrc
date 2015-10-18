@@ -5,7 +5,7 @@
 ""
 
 "" For the unfortunately-named Pathogen plugin system
-execute pathogen#infect()
+"" execute pathogen#infect()
 
 "" Important
 set nocompatible    "" use Vim defaults instead of vi compatibility
