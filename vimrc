@@ -5,7 +5,7 @@
 ""
 
 "" For the unfortunately-named Pathogen plugin system
-"" execute pathogen#infect()
+execute pathogen#infect()
 
 "" Important
 set nocompatible    "" use Vim defaults instead of vi compatibility
@@ -22,6 +22,7 @@ set numberwidth=4   "" number of colums to use for the line number
 
 "" Syntax, highlighting and spelling
 syntax on
+set background=dark "" dark background for terminal, light for GUI (see below)
 set hlsearch        "" highlights all matches for last used search pattern
 
 "" Messages and info
@@ -43,5 +44,20 @@ set smartindent     "" do clever autoindenting (aw yeah)
 "" Reading and writing files
 set fileformats=unix,mac,dos
 set encoding=utf-8
+
+"" For MacVim and GVim (alternative to .gvimrc)
+if has("gui_running")
+    set guifont=Source\ Code\ Pro:h14
+    set background=light
+    set guioptions-=T
+    set guioptions+=e
+    colorscheme solarized
+
+    "" Open NERDTree by default
+    autocmd vimenter * NERDTree
+
+    "" Close Vim if only NERDTree is open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+endif
 
 "" EOF
