@@ -11,7 +11,7 @@
 export PS1='\n\[\e[1m\]\u@\h \w\n\$\[\e[0m\] '
 
 ## Basic path, more defined in system path
-export PATH=~/.local/bin:/opt/perl5/bin:/opt/bin:/usr/local/bin:$PATH
+export PATH=~/.rbenv/bin:~/.local/bin:/opt/perl5/bin:/opt/bin:/usr/local/bin:$PATH
 
 ## Environment variables
 export BLOCKSIZE=1m
@@ -73,8 +73,8 @@ alias gpm='git push --verbose origin master'
 alias gs='git status'
 
 ## Perlbrew Perl directory
-export PERLBREW_ROOT=/opt/perl5
-source /opt/perl5/etc/bashrc
+##export PERLBREW_ROOT=/opt/perl5
+##source /opt/perl5/etc/bashrc
 
 ## Silent pushd/popd
 function cd() {
@@ -109,6 +109,9 @@ function txz() {
     _target=${1%/}
     tar -cJvf "${_target}.tar.xz" --options xz:compression-level=9 "$_target"
 }
+
+## rbenv
+eval "$(rbenv init -)"
 
 ## EOF
 
