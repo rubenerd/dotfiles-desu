@@ -1,0 +1,77 @@
+######
+## KornShell completions. Not complete, just my most commonly used
+## 2019-07-17
+##
+## Inspired by:
+## https://github.com/qbit/dotfiles/blob/master/common/dot_ksh_completions
+## https://deftly.net/posts/2017-05-01-openbsd-ksh-tab-complete.html
+
+## Services
+set -A complete_service -- onereload onerestart onestop restart start status \
+                           stop
+
+## Remote access
+_SSH_HOSTS=$(awk '/^Host/{ print $2 }' ~/.ssh/config)
+set -A complete_mosh -- $_SSH_HOSTS
+set -A complete_scp  -- $_SSH_HOSTS
+set -A complete_ssh  -- $_SSH_HOSTS
+
+## Repos
+set -A complete_git -- diff log rebase origin master pull push status
+set -A complete_svn -- add auth ci cleanup co cp export info list lock log \
+                       merge mv revert rm sw up upgrade
+
+## Package managers, ports, etc
+set -A complete_brew  -- clean install list search tap remove update upgrade
+set -A complete_make  -- build config config-recursive clean deinstall \
+                         distclean install missing reinstall rmconfig showconfig
+set -A complete_pkg   -- clean info install lock search unlock update upgrade
+set -A complete_pkgin -- autoremove avail clean full-upgrade install keep list \
+                         remove search update upgrade
+
+## FreeBSD
+set -A complete_iocage -- create destroy fetch get list rename restart set \
+                          start stop
+set -A complete_geli   -- attach backup configure clear delkey detach dump \
+                          init kill label list onetime restore setkey status \
+                          suspend stop unload
+set -A complete_gnop   -- create configure destroy list reload status unload
+set -A complete_gpart  -- add bootcode create destroy resize
+
+## FreeBSD, and now NetBSD! :)
+set -A complete_zpool  -- add attach checkpoint clear create destroy detach \
+                          export get history import initialize iostat \
+                          labelclear list offline online reguid remove replace \
+                          scrub set split status upgrade
+set -A complete_zfs    -- clone create destroy diff get jail list mount \
+                          promote receive set send share snapshot upgrade
+
+## NetBSD
+set -A complete_dkctl -- addwedge delwedge getwedgeinfo listwedges synccache
+set -A complete_gpt   -- add biosboot create destroy label migrate recover \
+                         remove set show type unset
+
+## macOS
+set -A complete_diskutil -- activity addVolume APFS chrole convert create \
+                            createContainer decrypt delete deleteContainer \
+                            deleteSnapshot deleteVolume eject encrypt \
+                            eraseOptical eraseVolume info list listSnapshots \
+                            listFilesystems lock mount mountDisk partitionDisk \
+                            passwd quota randomDisk revert reserve repairDisk \
+                            repairVolume resizeContainer resizeVolume \
+                            secureErase unlock unmount unmountDisk verifyDisk \
+                            verifyVolume zeroDisk
+set -A complete_hdiutil  -- attach checksum compact convert create detach info \
+                            unmount verify
+
+## Site generators
+set -A complete_hugo   -- check config convert env gen help import list new \
+                          server version
+set -A complete_mkdocs -- build gh-deploy new serve
+
+## Media
+set -A complete_magick -- convert identify mogrify -autolevel -chop -normalize \
+                          +repage -resize -quality
+
+## EOF
+
