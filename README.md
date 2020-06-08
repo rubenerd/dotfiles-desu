@@ -11,6 +11,6 @@ current. Mmm, currents.
 This was also my first public repo, and taught me git. I still prefer svn, but
 I feel that ship has now sailed.
 
-[lunchbox](https://github.com/rubenerd/rubens-lunchbox)
-[portable OpenBSD Kornshell](https://github.com/ibara/oksh)
+[lunchbox]: https://github.com/rubenerd/rubens-lunchbox
+[portable OpenBSD Kornshell]: https://github.com/ibara/oksh
 
