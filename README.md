@@ -1,37 +1,16 @@
-# Readme for dotfiles-desu
-Personal stash of dotfiles and orchestration scripts  
-By Ruben Schade, 2012–present  
-https://github.com/RubenSchade/dotfiles-desu
+# dotfiles-desu
 
-## What is this?
-After years of subversion and hg (and cvs), I've finally decided to put
-Github to use. Partly so I can learn git, but also because some of the
-indispensable parts of my current workflow are hosted here. Pardon my
-paradigm–synergising use of the word “workflow”.
+This is my personal dotfiles stash. New orchestration scripts and related tools
+now belong in my [lunchbox].
 
-**Update 2014**: I now use private Github repos at work. Mission 
-Accomplished!
+I've changed my toolchain significantly since 2012, so much of this repo is now
+<del>hysterical</del> historical. I now use the *excellent* [portable OpenBSD
+Kornshell] as my daily driver, so those associated scripts will be the most
+current. Mmm, currents.
 
-## No, really, what is this?
-As my first test repo, this is nothing special. Mostly it will serve as a 
-replacement for my SVN dotfiles repo on my old VPS which I've since
-retired. That was a lot of acronyms, FYI. This includes:
+This was also my first public repo, and taught me git. I still prefer svn, but
+I feel that ship has now sailed.
 
-* dotfiles for shells, apps and so on
-* initialisation scripts
-* <del>VM initialisation scripts for VirtualBox, QEMU and such</del> moving to its own repo
-* one off Perl scripts
-* probably more
-
-## Wouldn't these work better as gists?
-<del>Yes</del> perhaps. This way though, I can grab all my dotfiles, then
-symlink on all my machines. It's like a dependency-free orchestration
-system (though I'll probably want to move configuration files over to
-Ansible at some point).
-
-## Can I use these?
-
-Go for it d(^_^)b. Though their utility is probably limited unless you
-work in cloud infrastructure, and tend to bet on the wrong horse for many
-tools.
+[lunchbox](https://github.com/rubenerd/rubens-lunchbox)
+[portable OpenBSD Kornshell](https://github.com/ibara/oksh)
 
