@@ -1,0 +1,9 @@
+######
+## From the NetBSD docs
+## https://www.netbsd.org/docs/guide/en/chap-fetch.html
+
+update -dP
+rdiff -u
+diff -u
+cvs -q
+
