@@ -36,7 +36,7 @@ set -A complete_geli   -- attach backup configure clear delkey detach dump \
                           init kill label list onetime restore setkey status \
                           suspend stop unload
 set -A complete_gnop   -- create configure destroy list reload status unload
-set -A complete_gpart  -- add bootcode create destroy resize
+set -A complete_gpart  -- add bootcode create destroy resize status
 
 ## FreeBSD, and now NetBSD! :)
 set -A complete_zpool  -- add attach checkpoint clear create destroy detach \
