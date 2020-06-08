@@ -1,15 +1,14 @@
-""
-"" Ruben's abridged .vimrc
+""""""
+"" Ruben's MVP .vimrc
+"" 2019-10-16
 ""
 
-execute pathogen#infect()
-syntax on
-set ruler
-set number
+set linebreak       "" soft linebreaks on words
+set number          "" line numbers
+set ruler           "" statusbar with mode, cursor position
+syntax on           "" syntax highlighting
+set expandtab       "" convert evil tabs to nice spaces
+set shiftwidth=4    "" indent by 4 spaces
+set tabstop=4       "" tighter spacing for tabs
+set encoding=utf-8  "" really shouldn't be anything else now
 
-if has("gui_running") 
-    set background=dark
-    set guioptions-=T
-    set guioptions+=e
-    colorscheme solarized
-endif
