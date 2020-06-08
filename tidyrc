@@ -1,0 +1,9 @@
+######
+## html5-tidy configuration
+## 2020-06-07
+
+bare: no
+numeric-entities: no
+output-xhtml: yes
+uppercase-tags: no
+
