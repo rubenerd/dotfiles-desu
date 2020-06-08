@@ -5,8 +5,9 @@
 ## Easiest way to keep dotfiles in version control
 ## 2015-08
 
+
 linkup() {
-    if [ -f $1 ]; then
+    if [ -f ~/.$1 ]; then
         echo "$1 already exists."
     else
         ln -s $(pwd)/$1 ~/.$1
@@ -16,13 +17,14 @@ linkup() {
 
 linkup cvsrc
 linkup emacs
+linkup gitconfig
 linkup kshrc
 linkup oksh_completions
 linkup profile
 linkup tidyrc
 linkup vimrc
 
-case `uname` in
+case $(uname) in
     Darwin)
         linkup shuttle.json
         ;;
