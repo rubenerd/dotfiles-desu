@@ -1,0 +1,18 @@
+{
+  "_comments": [
+    "Config file for the macOS shuttle SSH launcher",
+    "http://fitztrev.github.io/shuttle/",
+    "2020-06-08",
+    "empty custom hosts[] must remain, or ssh_config hosts won't be parsed"
+  ],
+  "editor": "default",
+  "launch_at_login": true,
+  "terminal": "Terminal.app",
+  "default_theme": "PencilLight",
+  "open_in": "new",  
+  "show_ssh_config_hosts": true,
+  "ssh_config_ignore_hosts": [ ],
+  "ssh_config_ignore_keywords": [ ],
+  "hosts": [ ]
+}
+
