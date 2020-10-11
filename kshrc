@@ -15,6 +15,7 @@ PS1='\n$(tput smso)${USER}@${HOST}:${PWD}$(tput rmso)\n\$ '
 
 ## Path to my personal library repo
 [ -d ~/Repos/mugboss/bin ] && export PATH="~/Repos/mugboss/bin:$PATH"
+[ -d /opt/bin ] && export PATH="/opt/bin/:$PATH"
 [ -d /opt/pkg ] && export PATH="/opt/pkg/bin/:$PATH"
 
 ## Environment variables
@@ -23,7 +24,7 @@ export BROWSER=links
 export CLICOLOR=1  ## for FreeBSD and macOS
 export EDITOR=vi
 export GREP_OPTIONS='--color=auto --files-with-matches --recursive'
-export HISTCONTROL="ignorespace"
+export HISTCONTROL='ignorespace'
 export LC_ALL='en_US.UTF-8'  ## should already be set, just in case
 export PAGER=less
 export XML_CATALOG_FILES='/usr/local/etc/xml/catalog'  ## for Docbook
@@ -90,8 +91,8 @@ alias diff='colordiff'
 alias jpo='jpegoptim --preserve --totals --verbose'
 alias pnc='pngcrush -blacken -fix -rem alla -oldtimestamp -ow -reduce -v'
 alias pz='plzip -9v'
-alias rsync='rsync -rvhtlX --progress --stats --itemize-changes'
-alias yt="youtube-dl"
+alias rsync='rsync -rvhtlX --itemize-changes --progress --stats'
+alias yt='youtube-dl'
 
 ## Other useful aliases
 alias ..='cd ..'
